@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/DeepjyotiSarmah/go_MVC_with_React_tutorial/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+	// "github.com/lib/pq"
 )
 
 var DB *gorm.DB
 
-func ConnectToDatabase() {
+func ConnectToDB() {
 	var err error
 	dsn := os.Getenv("DB_URL")
 
@@ -23,6 +23,6 @@ func ConnectToDatabase() {
 
 }
 
-func SyncDB() {
-	DB.AutoMigrate(&models.Post{}) //creates table in our database
-}
+// func SyncDB() {
+// 	DB.AutoMigrate(&models.Post{}) //creates table in our database
+// }
