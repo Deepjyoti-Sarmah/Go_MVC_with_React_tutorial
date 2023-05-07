@@ -32,6 +32,15 @@ func main() {
 	app.Get("/api/tasks/:id", controllers.FetchTask)
 	app.Delete("/api/tasks/:id", controllers.DeleteTask)
 
+	frontendRoutes := []string{
+		"/",
+		"/about",
+	}
+
+	for _, route := range frontendRoutes {
+		app.Get(route, controllers.Home)
+	}
+
 	app.Get("/", controllers.Home)
 
 	// Start app
